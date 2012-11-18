@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Shs::Application.load_tasks
+SHS::Application.load_tasks
