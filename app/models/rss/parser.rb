@@ -2,7 +2,11 @@ require 'nokogiri'
 
 module Rss
   class Parser
-    class Entry < OpenStruct; end
+    class Entry < OpenStruct
+      def to_hash
+        @table.dup
+      end
+    end
 
     def initialize(xml)
       @xml = xml

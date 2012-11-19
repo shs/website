@@ -6,29 +6,9 @@ module Rss
     end
 
     def import!
-      items.each do |item|
-        unless uuids.include?(item.uuid)
-          attributes = {
-            :uuid        => item.uuid,
-            :title       => item.title,
-            :description => item.description,
-            :link        => item.link,
-            :date        => item.date
-          }
-
-          @model.create!(attributes)
-        end
+      Parser.new(Downloader.new(@url).download!).entries.each do |item|
+        @model.create!(item.to_hash) unless @model.class.uuids.include?(item.uuid)
       end
-    end
-
-    private
-
-    def items
-      @items ||= Parser.new(Downloader.new(@url).download!).entries
-    end
-
-    def uuids
-      @uuids ||= @model.class.uuids
     end
   end
 end
