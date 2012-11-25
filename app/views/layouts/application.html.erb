@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SHS</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<html class="wf-loading">
+  <head>
+    <title>SHS</title>
+    <%= stylesheet_link_tag "screen", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div id="container" data-pjax-container>
+      <%= render 'layouts/menu' %>
+      <%= render 'layouts/content' %>
+    </div>
+    <%# render 'layouts/footer' %>
+  </body>
 </html>

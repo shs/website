@@ -1,0 +1,37 @@
+@import compass/reset
+@import compass/css3
+
+@import foundation/settings
+@import foundation/functions/all
+
+@import settings
+
+//foundations settings overide
+
+@import foundation/mixins/clearfix
+@import foundation/mixins/css-triangle
+@import foundation/mixins/respond-to
+@import foundation/mixins/semantic-grid
+@import foundation/common/globals
+@import foundation/components/grid
+@import compass/typography
+
+@import utilities/retina-sprites
+
+$gutter-width: $rowWidth
+
+// import 1x sprites
+// $sprites: sprite-map("@x1/*.png", $spacing: 20px)
+
+// import 2x sprites
+// $sprites2x: sprite-map("@x2/*.png", $spacing: 40px)
+
++establish-baseline
+
+@import base/main
+@import base/links
+@import base/headings
+
+@import layout/main
+@import layout/header
+@import layout/menu

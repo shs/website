@@ -1,0 +1,2 @@
+module ModdingNewsHelper
+end
