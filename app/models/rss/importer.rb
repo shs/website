@@ -1,13 +1,14 @@
 module Rss
   class Importer
-    def initialize(model, url)
-      @model = model
-      @url   = url
+    def initialize(model)
+      @source = model.source
+      @items  = model.items
+      @url    = model.url
     end
 
     def import!
       Parser.new(Downloader.new(@url).download!).entries.each do |item|
-        @model.create!(item.to_hash) unless @model.class.uuids.include?(item.uuid)
+        @items.create!(item.to_hash.merge(:source => @source)) unless @items.class.uuids.include?(item.uuid)
       end
     end
   end
