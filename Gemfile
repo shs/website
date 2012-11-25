@@ -10,7 +10,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'zurb-foundation'
-  gem 'susy'
   gem 'compass', '>= 0.12.2'
   gem 'compass-rails', '>= 1.0.3'
 end
