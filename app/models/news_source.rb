@@ -16,7 +16,7 @@ class NewsSource
 
   {
     :modding_news => 'http://forums.gibberlings3.net/index.php?app=core&module=global&section=rss&type=forums&id=1',
-    :shs_news     => 'http://www.shsforums.net/index.php?act=rssout&id=2'
+    :shs_news     => 'http://www.shsforums.net/index.php?app=core&module=global&section=rss&type=forums&id=2'
   }.each do |name, url|
     Storage.add(Record.new(name, url))
   end
