@@ -13,12 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20121118041857) do
 
-  create_table "modding_news", :force => true do |t|
+  create_table "news_items", :force => true do |t|
+    t.string   "source",      :null => false
     t.string   "uuid",        :null => false
     t.string   "title",       :null => false
     t.string   "link",        :null => false
     t.text     "description", :null => false
-    t.datetime "date"
+    t.datetime "date",        :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
